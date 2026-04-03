@@ -208,6 +208,18 @@
             }
         }
 
+        .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.85s forwards;
+        }
+
         .hero-description {
             font-size: clamp(1.05rem, 2vw, 1.3rem);
             color: var(--cream);
@@ -849,6 +861,7 @@
                 <span class="word word-2">FIT</span>
                 <span class="word word-3">CLUB</span>
             </h1>
+            <p class="hero-subtitle">Afterschool Program</p>
             <p class="hero-description">
                 Kids don't just play — they build teamwork, confidence, and character through sports and movement.
             </p>
