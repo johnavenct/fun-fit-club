@@ -451,6 +451,84 @@
             letter-spacing: 0.05em;
         }
 
+        /* Coach Bio Section */
+        .coach-section {
+            padding: 6rem 2rem;
+            background: white;
+            position: relative;
+        }
+
+        .coach-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--primary-teal);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+
+        .coach-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .coach-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, #1e4442 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .coach-info h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--primary-teal);
+            letter-spacing: 0.03em;
+            margin-bottom: 0.25rem;
+        }
+
+        .coach-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .coach-bio {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--dark-navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .coach-credentials {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .coach-credentials li {
+            background: var(--cream);
+            color: var(--primary-teal);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 2px solid var(--primary-teal);
+        }
+
         /* Details Section */
         .details-section {
             padding: 6rem 2rem;
@@ -714,6 +792,24 @@
                 top: -20px;
             }
 
+            .coach-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .coach-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .coach-photo {
+                width: 220px;
+                margin: 0 auto;
+            }
+
+            .coach-credentials {
+                justify-content: center;
+            }
+
             .why-section {
                 padding: 4rem 1.5rem;
             }
@@ -905,6 +1001,31 @@
                     <li>Sport skills and game play</li>
                     <li>Reflection and positive reinforcement</li>
                     <li>Character lessons that stick</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coach Bio Section -->
+    <section class="coach-section fade-in">
+        <div class="coach-container">
+            <div class="coach-photo">
+                👨‍🏫
+            </div>
+            <div class="coach-info">
+                <h2>Meet Coach Frank</h2>
+                <p class="coach-title">Physical Education Teacher & Varsity Baseball Coach</p>
+                <p class="coach-bio">
+                    With over [X] years of experience working with young athletes, Coach Frank brings the energy, structure, and heart that make Fun Fit Club special. As a physical education teacher in the Floral Park School District and varsity baseball coach, he understands how to meet kids where they are and help them grow — both on and off the field.
+                </p>
+                <p class="coach-bio">
+                    Coach Frank is [certified in CPR/First Aid and holds a degree in Physical Education from XYZ University]. His approach combines skill-building with character development, creating a safe and encouraging environment where every child can thrive.
+                </p>
+                <ul class="coach-credentials">
+                    <li>Certified PE Teacher</li>
+                    <li>Varsity Baseball Coach</li>
+                    <li>CPR & First Aid Certified</li>
+                    <li>[X]+ Years with Youth Athletes</li>
                 </ul>
             </div>
         </div>
