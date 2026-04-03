@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fit Club - Movement with Meaning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #2c5f5d;
+            --cream: #f5f1e8;
+            --accent-orange: #ff6b35;
+            --accent-yellow: #ffd23f;
+            --dark-navy: #1a2332;
+            --light-gray: #e8e8e8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--dark-navy);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, #1e4442 60%, #163332 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before, .hero::after {
+            display: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        /* Ambient blobs */
+        .hero-blobs {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            filter: blur(50px);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .blob-1 {
+            width: clamp(280px, 40vw, 550px);
+            height: clamp(280px, 40vw, 550px);
+            background: rgba(255, 210, 63, 0.16);
+            top: -10%;
+            right: -5%;
+            animation: drift1 13s linear infinite;
+        }
+
+        .blob-2 {
+            width: clamp(250px, 35vw, 500px);
+            height: clamp(250px, 35vw, 500px);
+            background: rgba(255, 107, 53, 0.13);
+            bottom: -8%;
+            left: -5%;
+            animation: drift2 17s linear infinite;
+        }
+
+        .blob-3 {
+            width: clamp(180px, 25vw, 350px);
+            height: clamp(180px, 25vw, 350px);
+            background: rgba(245, 241, 232, 0.1);
+            top: 35%;
+            left: 15%;
+            animation: drift3 11s linear infinite;
+        }
+
+        .blob-4 {
+            width: clamp(220px, 30vw, 420px);
+            height: clamp(220px, 30vw, 420px);
+            background: rgba(255, 210, 63, 0.11);
+            bottom: 15%;
+            right: 10%;
+            animation: drift4 19s linear infinite;
+        }
+
+        @keyframes drift1 {
+            0% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+            14% { transform: translate(-50px, 35px) scale(1.06); border-radius: 42% 58% 52% 48%; }
+            37% { transform: translate(30px, 90px) scale(0.94); border-radius: 56% 44% 38% 62%; }
+            58% { transform: translate(-65px, 55px) scale(1.1); border-radius: 44% 56% 60% 40%; }
+            79% { transform: translate(20px, 15px) scale(0.97); border-radius: 48% 52% 46% 54%; }
+            100% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+        }
+
+        @keyframes drift2 {
+            0% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+            18% { transform: translate(60px, -35px) scale(1.08); border-radius: 58% 42% 44% 56%; }
+            42% { transform: translate(25px, -75px) scale(0.93); border-radius: 44% 56% 40% 60%; }
+            63% { transform: translate(80px, -20px) scale(1.04); border-radius: 52% 48% 56% 44%; }
+            85% { transform: translate(-15px, -50px) scale(0.96); border-radius: 46% 54% 50% 50%; }
+            100% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+        }
+
+        @keyframes drift3 {
+            0% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+            22% { transform: translate(45px, -55px) scale(1.1); border-radius: 40% 60% 48% 52%; }
+            41% { transform: translate(-30px, -20px) scale(0.95); border-radius: 54% 46% 58% 42%; }
+            67% { transform: translate(-55px, 40px) scale(1.07); border-radius: 46% 54% 42% 58%; }
+            88% { transform: translate(15px, -10px) scale(0.98); border-radius: 52% 48% 54% 46%; }
+            100% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+        }
+
+        @keyframes drift4 {
+            0% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+            16% { transform: translate(-40px, -45px) scale(1.05); border-radius: 44% 56% 40% 60%; }
+            39% { transform: translate(35px, 30px) scale(0.92); border-radius: 58% 42% 52% 48%; }
+            55% { transform: translate(60px, -25px) scale(1.08); border-radius: 42% 58% 56% 44%; }
+            78% { transform: translate(-25px, 55px) scale(0.97); border-radius: 50% 50% 44% 56%; }
+            100% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+        }
+
+        /* Eyebrow */
+        .hero-eyebrow {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+            font-weight: 600;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Bold playful headline */
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(5rem, 15vw, 14rem);
+            color: #ffffff;
+            line-height: 0.9;
+            letter-spacing: 0.02em;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0 0.3em;
+        }
+
+        .hero h1 .word {
+            display: inline-block;
+            opacity: 0;
+            animation: wordPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .word-1 {
+            color: #ffffff;
+            animation-delay: 0.3s !important;
+            transform-origin: bottom left;
+        }
+
+        .word-2 {
+            color: var(--accent-yellow);
+            animation-delay: 0.5s !important;
+            transform-origin: bottom center;
+        }
+
+        .word-3 {
+            color: var(--accent-orange);
+            animation-delay: 0.7s !important;
+            transform-origin: bottom right;
+        }
+
+        @keyframes wordPop {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.7) rotate(-4deg);
+            }
+            70% {
+                transform: translateY(-5px) scale(1.05) rotate(1deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+        }
+
+        .hero-description {
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            color: var(--cream);
+            max-width: 580px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 1s forwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: #ffffff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            letter-spacing: 0.08em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.35);
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 1.2s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Program Flow Section */
+        .program-flow {
+            padding: 6rem 2rem;
+            background: white;
+            position: relative;
+        }
+
+        .program-flow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--primary-teal);
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--primary-teal);
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--accent-orange);
+            font-weight: 600;
+            margin-bottom: 4rem;
+        }
+
+        .flow-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .flow-card {
+            background: linear-gradient(135deg, var(--cream) 0%, white 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .flow-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-orange);
+        }
+
+        .flow-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--accent-yellow);
+            position: absolute;
+            top: -30px;
+            right: 20px;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .flow-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-teal);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .flow-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .flow-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--dark-navy);
+            font-size: 1.05rem;
+        }
+
+        .flow-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        /* Why Section */
+        .why-section {
+            padding: 6rem 2rem;
+            background: var(--primary-teal);
+            color: var(--cream);
+            position: relative;
+        }
+
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: white;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .why-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-content h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--accent-yellow);
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        .quote-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 5px solid var(--accent-orange);
+            padding: 2rem 3rem;
+            margin: 3rem 0;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .quote-box p {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent-yellow);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-yellow);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Details Section */
+        .details-section {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .details-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--primary-teal);
+            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+        }
+
+        .details-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--accent-orange);
+        }
+
+        .detail-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-section {
+            margin-top: 2.5rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .map-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .map-info .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-info h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            color: var(--primary-teal);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .map-info .location-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .map-embed {
+            min-height: 350px;
+        }
+
+        .map-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .schedule-list {
+            list-style: none;
+        }
+
+        .schedule-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 1.1rem;
+            color: var(--dark-navy);
+            font-weight: 600;
+        }
+
+        .schedule-list li:last-child {
+            border-bottom: none;
+        }
+
+        .price-tag {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: var(--accent-orange);
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .location-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-navy);
+        }
+
+        .location-text strong {
+            color: var(--primary-teal);
+            display: block;
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff8c5f 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .final-cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: white;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.03em;
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            color: white;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-navy);
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Animations on Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive - Tablet */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 100svh;
+            }
+
+            .hero-content {
+                padding: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.5rem, 12vw, 5rem);
+                gap: 0 0.2em;
+            }
+
+            .hero-eyebrow {
+                font-size: 0.8rem;
+                letter-spacing: 0.2em;
+                margin-bottom: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-button {
+                font-size: 1.4rem;
+                padding: 0.9rem 2.5rem;
+            }
+
+            .hero-blobs {
+                filter: blur(40px);
+            }
+
+            .program-flow {
+                padding: 4rem 1.5rem;
+            }
+
+            .program-flow::before,
+            .why-section::before,
+            .details-section::before {
+                height: 60px;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .flow-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .flow-card {
+                padding: 2rem;
+            }
+
+            .flow-number {
+                font-size: 3.5rem;
+                top: -20px;
+            }
+
+            .why-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .quote-box {
+                padding: 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .details-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .detail-card {
+                padding: 2rem;
+            }
+
+            .map-section {
+                grid-template-columns: 1fr;
+            }
+
+            .map-info {
+                padding: 2rem;
+            }
+
+            .map-embed {
+                min-height: 280px;
+            }
+
+            .final-cta {
+                padding: 4rem 1.5rem;
+            }
+
+            .final-cta::before {
+                width: 250px;
+                height: 250px;
+                top: -125px;
+                right: -125px;
+            }
+        }
+
+        /* Responsive - Small mobile */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: clamp(2.8rem, 14vw, 3.5rem);
+            }
+
+            .hero-eyebrow {
+                font-size: 0.75rem;
+                letter-spacing: 0.15em;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .cta-button {
+                font-size: 1.2rem;
+                padding: 0.85rem 2rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-blobs {
+                filter: blur(30px);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .flow-card h3 {
+                font-size: 1.6rem;
+            }
+
+            .flow-card li {
+                font-size: 0.95rem;
+            }
+
+            .quote-box p {
+                font-size: 1.5rem;
+            }
+
+            .benefit-item {
+                padding: 1.5rem;
+            }
+
+            .benefit-icon {
+                font-size: 2.5rem;
+            }
+
+            .benefit-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .detail-card h3 {
+                font-size: 1.6rem;
+            }
+
+            .price-tag {
+                font-size: 2.8rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2.5rem;
+            }
+
+            .final-cta p {
+                font-size: 1.1rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="blob blob-4"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Movement with Meaning</p>
+            <h1>
+                <span class="word word-1">FUN</span>
+                <span class="word word-2">FIT</span>
+                <span class="word word-3">CLUB</span>
+            </h1>
+            <p class="hero-description">
+                Kids don't just play — they build teamwork, confidence, and character through sports and movement.
+            </p>
+            <a href="#register" class="cta-button">Join the Fun!</a>
+        </div>
+    </section>
+
+    <!-- Program Flow Section -->
+    <section class="program-flow fade-in">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">A Typical Day at Fun Fit Club</p>
+        
+        <div class="flow-container">
+            <div class="flow-card">
+                <span class="flow-number">1</span>
+                <h3>Warm Up & Prepare</h3>
+                <p>We start with purpose—getting bodies ready to move safely and confidently.</p>
+                <ul>
+                    <li>Dynamic warmups</li>
+                    <li>Agility and coordination drills</li>
+                    <li>Preparing the body to move safely</li>
+                </ul>
+            </div>
+
+            <div class="flow-card">
+                <span class="flow-number">2</span>
+                <h3>Play & Connect</h3>
+                <p>High-energy, inclusive activities where teamwork takes center stage.</p>
+                <ul>
+                    <li>Fun PE-style games</li>
+                    <li>Team challenges</li>
+                    <li>High-energy, inclusive play</li>
+                </ul>
+            </div>
+
+            <div class="flow-card">
+                <span class="flow-number">3</span>
+                <h3>Finish with Purpose</h3>
+                <p>We wrap up by developing skills and reinforcing the character lessons learned.</p>
+                <ul>
+                    <li>Sport skills and game play</li>
+                    <li>Reflection and positive reinforcement</li>
+                    <li>Character lessons that stick</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section fade-in">
+        <div class="why-content">
+            <h2>Why Fun Fit Club?</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+                We believe every child deserves to discover their potential through movement. Our small-group approach ensures personalized attention while fostering teamwork and friendship.
+            </p>
+
+            <div class="quote-box">
+                <p>"Sports Are The Tool. Character Is The Goal."</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Teamwork</h3>
+                    <p>Learning to work together, support teammates, and celebrate collective success.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Confidence</h3>
+                    <p>Building self-assurance through skill development and positive encouragement.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Character</h3>
+                    <p>Developing integrity, resilience, and respect through every game and challenge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="details-section fade-in">
+        <div class="details-container">
+            <h2 class="section-title">Program Details</h2>
+            
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="icon">📅</div>
+                    <h3>Schedule</h3>
+                    <ul class="schedule-list">
+                        <li>Thursday, May 21</li>
+                        <li>Thursday, May 28</li>
+                        <li>Thursday, June 4</li>
+                        <li>Thursday, June 11</li>
+                        <li>Thursday, June 18</li>
+                    </ul>
+                </div>
+
+                <div class="detail-card">
+                    <div class="icon">👥</div>
+                    <h3>Who Can Join?</h3>
+                    <p class="location-text" style="margin-bottom: 1rem;">
+                        <strong>Grades 3-6</strong>
+                    </p>
+                    <p class="location-text">
+                        Small group sizes ensure personalized attention and maximum engagement for every participant.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <div class="price-tag">$50 per day</div>
+            </div>
+
+            <div class="map-section">
+                <div class="map-info">
+                    <div class="icon">📍</div>
+                    <h3>Location</h3>
+                    <p class="location-text">
+                        <strong>Cove Sports Academy</strong>
+                        27 Cedar Swamp Road<br>
+                        Glen Cove, NY 11542
+                    </p>
+                </div>
+                <div class="map-embed">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.674!2d-73.6337!3d40.8712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c28816dcb4a7c3%3A0x6f1a0b7e0e1c2d3a!2s27%20Cedar%20Swamp%20Rd%2C%20Glen%20Cove%2C%20NY%2011542!5e0!3m2!1sen!2sus!4v1700000000000"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="register">
+        <h2>Ready to Join the Fun?</h2>
+        <p>Secure your child's spot in Fun Fit Club today. Limited spaces available!</p>
+        <a href="#" class="cta-button" style="background: white; color: var(--accent-orange);">Register Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Fun Fit Club. Movement with Meaning.</p>
+    </footer>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
