@@ -579,8 +579,25 @@
         }
 
         .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: rgba(255, 210, 63, 0.18);
+            border: 2px solid rgba(255, 210, 63, 0.35);
+            margin-bottom: 1.25rem;
+        }
+
+        .benefit-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--accent-yellow);
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .benefit-item h3 {
@@ -626,8 +643,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .coach-photo svg {
+            width: 45%;
+            height: 45%;
         }
 
         .coach-info h2 {
@@ -716,8 +738,47 @@
         }
 
         .detail-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: rgba(44, 95, 93, 0.08);
+            border: 2px solid rgba(44, 95, 93, 0.15);
+            margin-bottom: 1.25rem;
+        }
+
+        .detail-card .icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--primary-teal);
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .map-info .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: rgba(44, 95, 93, 0.08);
+            border: 2px solid rgba(44, 95, 93, 0.15);
+            margin-bottom: 1.25rem;
+        }
+
+        .map-info .icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--primary-teal);
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .map-section {
@@ -1113,7 +1174,13 @@
             }
 
             .benefit-icon {
-                font-size: 2.5rem;
+                width: 56px;
+                height: 56px;
+            }
+
+            .benefit-icon svg {
+                width: 28px;
+                height: 28px;
             }
 
             .benefit-item h3 {
@@ -1244,7 +1311,7 @@
     <section class="coach-section fade-in" id="coach">
         <div class="coach-container">
             <div class="coach-photo">
-                👨‍🏫
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <div class="coach-info">
                 <h2>Meet Coach Frank</h2>
@@ -1279,19 +1346,25 @@
 
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <h3>Teamwork</h3>
                     <p>Learning to work together, support teammates, and celebrate collective success.</p>
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon">💪</div>
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    </div>
                     <h3>Confidence</h3>
                     <p>Building self-assurance through skill development and positive encouragement.</p>
                 </div>
 
                 <div class="benefit-item">
-                    <div class="benefit-icon">⭐</div>
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
                     <h3>Character</h3>
                     <p>Developing integrity, resilience, and respect through every game and challenge.</p>
                 </div>
@@ -1306,7 +1379,9 @@
             
             <div class="details-grid">
                 <div class="detail-card">
-                    <div class="icon">📅</div>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
                     <h3>Schedule</h3>
                     <p class="schedule-time">Thursdays · 4:30pm – 6:00pm</p>
                     <ul class="schedule-list">
@@ -1319,7 +1394,9 @@
                 </div>
 
                 <div class="detail-card">
-                    <div class="icon">👥</div>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <h3>Who Can Join?</h3>
                     <p class="location-text" style="margin-bottom: 1rem;">
                         <strong>Grades 3-6</strong>
@@ -1336,7 +1413,9 @@
 
             <div class="map-section">
                 <div class="map-info">
-                    <div class="icon">📍</div>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
                     <h3>Location</h3>
                     <p class="location-text">
                         <strong>Cove Sports Academy</strong>
