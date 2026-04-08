@@ -714,163 +714,173 @@
             margin: 0 auto;
         }
 
-        .details-grid {
+        /* Quick fact cards (top row) */
+        .quick-facts {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
             margin-top: 3rem;
         }
 
-        .detail-card {
+        .fact-card {
             background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            border-top: 5px solid var(--accent-orange);
+            border-radius: 18px;
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .detail-card h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
+        .fact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(44, 95, 93, 0.08);
+            border: 2px solid rgba(44, 95, 93, 0.15);
+            margin-bottom: 1rem;
+        }
+
+        .fact-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--primary-teal);
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .fact-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-value {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
             color: var(--primary-teal);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
+            line-height: 1.2;
         }
 
-        .detail-card .icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            background: rgba(44, 95, 93, 0.08);
-            border: 2px solid rgba(44, 95, 93, 0.15);
-            margin-bottom: 1.25rem;
+        .fact-value small {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--dark-navy);
+            opacity: 0.7;
+            margin-top: 0.25rem;
         }
 
-        .detail-card .icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--primary-teal);
-            stroke-width: 2;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .map-info .icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            background: rgba(44, 95, 93, 0.08);
-            border: 2px solid rgba(44, 95, 93, 0.15);
-            margin-bottom: 1.25rem;
-        }
-
-        .map-info .icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--primary-teal);
-            stroke-width: 2;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .map-section {
-            margin-top: 2.5rem;
+        /* Schedule dates strip */
+        .schedule-dates {
             background: white;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            padding: 2rem 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .schedule-dates-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.25rem;
+        }
+
+        .date-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            list-style: none;
+        }
+
+        .date-chips li {
+            background: var(--cream);
+            color: var(--primary-teal);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            border: 2px solid rgba(44, 95, 93, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .date-chips li:hover {
+            background: var(--primary-teal);
+            color: white;
+            border-color: var(--primary-teal);
+        }
+
+        /* Location card with map */
+        .location-card {
+            margin-top: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
             overflow: hidden;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.4fr;
         }
 
-        .map-info {
-            padding: 3rem;
+        .location-info {
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .map-info .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .location-info .fact-icon {
+            margin-bottom: 1.25rem;
         }
 
-        .map-info h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
+        .location-info .fact-label {
+            margin-bottom: 0.5rem;
+        }
+
+        .location-name {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
             color: var(--primary-teal);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
         }
 
-        .map-info .location-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
+        .location-address {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--dark-navy);
+            opacity: 0.8;
         }
 
-        .map-embed {
-            min-height: 350px;
+        .location-map {
+            min-height: 320px;
         }
 
-        .map-embed iframe {
+        .location-map iframe {
             width: 100%;
             height: 100%;
             border: 0;
             display: block;
-        }
-
-        .schedule-time {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-            margin-bottom: 1rem;
-            letter-spacing: 0.02em;
-        }
-
-        .schedule-list {
-            list-style: none;
-        }
-
-        .schedule-list li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid var(--light-gray);
-            font-size: 1.1rem;
-            color: var(--dark-navy);
-            font-weight: 600;
-        }
-
-        .schedule-list li:last-child {
-            border-bottom: none;
-        }
-
-        .price-tag {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 3.5rem;
-            color: var(--accent-orange);
-            margin-top: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .location-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--dark-navy);
-        }
-
-        .location-text strong {
-            color: var(--primary-teal);
-            display: block;
-            font-size: 1.3rem;
-            margin-top: 0.5rem;
         }
 
         /* CTA Section */
@@ -1079,24 +1089,32 @@
                 padding: 4rem 1.5rem;
             }
 
-            .details-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .quick-facts {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
 
-            .detail-card {
+            .fact-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .fact-value {
+                font-size: 1.2rem;
+            }
+
+            .schedule-dates {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .location-card {
+                grid-template-columns: 1fr;
+            }
+
+            .location-info {
                 padding: 2rem;
             }
 
-            .map-section {
-                grid-template-columns: 1fr;
-            }
-
-            .map-info {
-                padding: 2rem;
-            }
-
-            .map-embed {
+            .location-map {
                 min-height: 280px;
             }
 
@@ -1187,12 +1205,17 @@
                 font-size: 1.5rem;
             }
 
-            .detail-card h3 {
-                font-size: 1.6rem;
+            .fact-value {
+                font-size: 1.1rem;
             }
 
-            .price-tag {
-                font-size: 2.8rem;
+            .date-chips li {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .location-name {
+                font-size: 1.3rem;
             }
 
             .final-cta h2 {
@@ -1376,54 +1399,68 @@
     <section class="details-section fade-in" id="details">
         <div class="details-container">
             <h2 class="section-title">Program Details</h2>
-            
-            <div class="details-grid">
-                <div class="detail-card">
-                    <div class="icon">
+
+            <!-- Quick facts row -->
+            <div class="quick-facts">
+                <div class="fact-card">
+                    <div class="fact-icon">
                         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     </div>
-                    <h3>Schedule</h3>
-                    <p class="schedule-time">Thursdays · 4:30pm – 6:00pm</p>
-                    <ul class="schedule-list">
-                        <li>Thursday, May 21</li>
-                        <li>Thursday, May 28</li>
-                        <li>Thursday, June 4</li>
-                        <li>Thursday, June 11</li>
-                        <li>Thursday, June 18</li>
-                    </ul>
+                    <p class="fact-label">When</p>
+                    <p class="fact-value">Thursdays<small>5 sessions</small></p>
                 </div>
 
-                <div class="detail-card">
-                    <div class="icon">
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <p class="fact-label">Time</p>
+                    <p class="fact-value">4:30 – 6:00<small>after school</small></p>
+                </div>
+
+                <div class="fact-card">
+                    <div class="fact-icon">
                         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
-                    <h3>Who Can Join?</h3>
-                    <p class="location-text" style="margin-bottom: 1rem;">
-                        <strong>Grades 3-6</strong>
-                    </p>
-                    <p class="location-text">
-                        Small group sizes ensure personalized attention and maximum engagement for every participant.
-                    </p>
+                    <p class="fact-label">Ages</p>
+                    <p class="fact-value">Grades 3–6<small>small groups</small></p>
+                </div>
+
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <p class="fact-label">Cost</p>
+                    <p class="fact-value">$50<small>per session</small></p>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <div class="price-tag">$50 per day</div>
+            <!-- Specific dates -->
+            <div class="schedule-dates">
+                <p class="schedule-dates-label">Session Dates</p>
+                <ul class="date-chips">
+                    <li>May 21</li>
+                    <li>May 28</li>
+                    <li>June 4</li>
+                    <li>June 11</li>
+                    <li>June 18</li>
+                </ul>
             </div>
 
-            <div class="map-section">
-                <div class="map-info">
-                    <div class="icon">
+            <!-- Location with map -->
+            <div class="location-card">
+                <div class="location-info">
+                    <div class="fact-icon">
                         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     </div>
-                    <h3>Location</h3>
-                    <p class="location-text">
-                        <strong>Cove Sports Academy</strong>
+                    <p class="fact-label">Where</p>
+                    <p class="location-name">Cove Sports Academy</p>
+                    <p class="location-address">
                         27 Cedar Swamp Road<br>
                         Glen Cove, NY 11542
                     </p>
                 </div>
-                <div class="map-embed">
+                <div class="location-map">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.674!2d-73.6337!3d40.8712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c28816dcb4a7c3%3A0x6f1a0b7e0e1c2d3a!2s27%20Cedar%20Swamp%20Rd%2C%20Glen%20Cove%2C%20NY%2011542!5e0!3m2!1sen!2sus!4v1700000000000"
                         allowfullscreen=""
