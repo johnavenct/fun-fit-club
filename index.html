@@ -892,6 +892,96 @@
             display: block;
         }
 
+        /* Booking Section */
+        .booking-section {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .booking-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .booking-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--primary-teal);
+            letter-spacing: 0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .booking-eyebrow {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-orange);
+            margin-bottom: 0.75rem;
+        }
+
+        .booking-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--dark-navy);
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .booking-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid var(--accent-orange);
+            overflow: hidden;
+        }
+
+        .booking-perks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+            margin-top: 2rem;
+            color: var(--primary-teal);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .booking-perks span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .booking-perks svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-orange);
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .calendly-inline-widget {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .booking-section {
+                padding: 4rem 1.25rem;
+            }
+
+            .booking-card {
+                padding: 0.75rem;
+            }
+        }
+
         /* CTA Section */
         .final-cta {
             padding: 6rem 2rem;
@@ -1488,6 +1578,37 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section fade-in" id="book">
+        <div class="booking-container">
+            <span class="booking-eyebrow">Have Questions?</span>
+            <h2>Book a Call with Coach Frank</h2>
+            <p class="booking-subtitle">
+                Chat one-on-one about your child, the program, and whether Fun Fit Club is the right fit. Pick a time that works for you — it's free and only takes 30 minutes.
+            </p>
+            <div class="booking-card">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/funfitclub9/30min" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+            </div>
+            <div class="booking-perks">
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                    Free 30-minute call
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                    No commitment required
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                    Answers tailored to your kid
+                </span>
             </div>
         </div>
     </section>
