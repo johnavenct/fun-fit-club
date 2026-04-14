@@ -639,17 +639,19 @@
             width: 100%;
             aspect-ratio: 1;
             border-radius: 20px;
+            overflow: hidden;
             background: linear-gradient(135deg, var(--primary-teal) 0%, #1e4442 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            color: rgba(255, 255, 255, 0.5);
         }
 
-        .coach-photo svg {
-            width: 45%;
-            height: 45%;
+        .coach-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 18%;
+            transform: scale(1.6);
+            transform-origin: center 18%;
+            display: block;
         }
 
         .coach-info h2 {
@@ -672,6 +674,13 @@
             line-height: 1.8;
             color: var(--dark-navy);
             margin-bottom: 1.5rem;
+        }
+
+        .coach-mission {
+            font-weight: 600;
+            color: var(--primary-teal);
+            border-left: 4px solid var(--accent-orange);
+            padding-left: 1rem;
         }
 
         .coach-credentials {
@@ -1065,6 +1074,7 @@
 
             .coach-photo {
                 width: 220px;
+                aspect-ratio: 1;
                 margin: 0 auto;
             }
 
@@ -1334,22 +1344,32 @@
     <section class="coach-section fade-in" id="coach">
         <div class="coach-container">
             <div class="coach-photo">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <img src="coach-frank.jpg" alt="Coach Frank at the ballfield wearing a Fun Fit Club shirt" />
             </div>
             <div class="coach-info">
                 <h2>Meet Coach Frank</h2>
                 <p class="coach-title">Physical Education Teacher & Varsity Baseball Coach</p>
                 <p class="coach-bio">
-                    With over [X] years of experience working with young athletes, Coach Frank brings the energy, structure, and heart that make Fun Fit Club special. As a physical education teacher in the Floral Park School District and varsity baseball coach, he understands how to meet kids where they are and help them grow — both on and off the field.
+                    With over 13 years of experience working with young athletes, I've dedicated my career to helping kids grow through movement, teamwork, and positive experiences.
                 </p>
                 <p class="coach-bio">
-                    Coach Frank is [certified in CPR/First Aid and holds a degree in Physical Education from XYZ University]. His approach combines skill-building with character development, creating a safe and encouraging environment where every child can thrive.
+                    As a physical education teacher in the Floral Park School District and a varsity baseball coach, I've seen firsthand how powerful sports and activity can be — not just for building skills, but for shaping confidence, character, and resilience.
+                </p>
+                <p class="coach-bio">
+                    That's exactly why I created Fun Fit Club. I wanted to build a program where kids can stay active, have fun, and learn important life lessons in a supportive and encouraging environment. Every session is designed to help children grow both on and off the field — developing teamwork, effort, and confidence along the way.
+                </p>
+                <p class="coach-bio">
+                    I earned my degree in Physical Education from SUNY Cortland and am CPR & First Aid certified, ensuring a safe and structured environment for every child.
+                </p>
+                <p class="coach-bio coach-mission">
+                    At Fun Fit Club, my goal is simple: help kids move, have fun, and become the best version of themselves.
                 </p>
                 <ul class="coach-credentials">
                     <li>Certified PE Teacher</li>
                     <li>Varsity Baseball Coach</li>
                     <li>CPR & First Aid Certified</li>
-                    <li>[X]+ Years with Youth Athletes</li>
+                    <li>B.S. Physical Education, SUNY Cortland</li>
+                    <li>13+ Years with Youth Athletes</li>
                 </ul>
             </div>
         </div>
