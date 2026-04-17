@@ -124,6 +124,30 @@
             display: none !important;
         }
 
+        .navbar-login {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-teal) !important;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.55rem 1.25rem;
+            border-radius: 50px;
+            border: 2px solid var(--primary-teal);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-login:hover {
+            background: var(--primary-teal);
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-login::after {
+            display: none !important;
+        }
+
         .nav-toggle {
             display: none;
             background: none;
@@ -1349,7 +1373,8 @@
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#coach">Meet the Coach</a></li>
             <li><a href="#details">Program Details</a></li>
-            <li><a href="#register" class="navbar-cta">Register</a></li>
+            <li><a href="https://funfitclub.campmanagement.com/campers" class="navbar-login" target="_blank" rel="noopener">Family Login</a></li>
+            <li><a href="https://funfitclub.campmanagement.com/enroll" class="navbar-cta" target="_blank" rel="noopener">Register</a></li>
         </ul>
     </nav>
 
@@ -1371,7 +1396,7 @@
             <p class="hero-description">
                 Kids don't just play — they build teamwork, confidence, and character through sports and movement.
             </p>
-            <a href="#register" class="cta-button">Join the Fun!</a>
+            <a href="https://funfitclub.campmanagement.com/enroll" class="cta-button" target="_blank" rel="noopener">Join the Fun!</a>
             <div class="hero-trust">
                 <span class="trust-badge">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
@@ -1617,7 +1642,7 @@
     <section class="final-cta" id="register">
         <h2>Ready to Join the Fun?</h2>
         <p>Secure your child's spot in Fun Fit Club today. Limited spaces available!</p>
-        <a href="#" class="cta-button" style="background: white; color: var(--accent-orange);">Register Now</a>
+        <a href="https://funfitclub.campmanagement.com/enroll" class="cta-button" target="_blank" rel="noopener" style="background: white; color: var(--accent-orange);">Register Now</a>
     </section>
 
     <!-- Footer -->
